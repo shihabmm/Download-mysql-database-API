@@ -20,7 +20,7 @@ class Download
 		{
 			$stmt = $con->query('show create table '.$table); 
 			$row =$stmt->fetch(PDO::FETCH_ASSOC);
-			$return.= 'DROP TABLE ' . $table . ';'."\n";
+			$return.= 'DROP TABLE IF EXISTS' . $table . ';'."\n";
 			$return.=$row['Create Table'].';'."\n\n";
 			
 			$stmt = $con->query("select * from $table");
