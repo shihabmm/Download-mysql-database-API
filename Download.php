@@ -6,7 +6,7 @@ class Download
 	{
 		include 'Connection.php';
 		$dbname = $dbname;
-		$conn = new Connection($dbname,'','');
+		$conn = new Connection($dbname,'',''); //Replace blank quotes with your db username and password
 		$con = $conn->getConnection();
 		$con->beginTransaction();
 		$result = $con->query('show tables');
